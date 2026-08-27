@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Колокольная Горка — оставить отзыв</title>
+  <meta name="description" content="Выберите сервис для оставления отзыва о Колокольной Горке" />
+  <style>
+    body {font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; background:#f5f5f2; color:#171717;
+      display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:20px}
+    .card{width:100%;max-width:520px;background:#fff;border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.08);text-align:center}
+    h1{font-size:20px;margin-bottom:8px}
+    p{color:#6f6f6b;margin-bottom:16px}
+    .btns{display:flex;flex-direction:column;gap:12px}
+    a.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px;border-radius:12px;text-decoration:none;font-weight:700}
+    .yandex{background:#171717;color:#fff}
+    .twogis{background:#fff;color:#171717;border:1px solid #deded8}
+    .hint{font-size:13px;color:#8a8a86;margin-top:14px}
+  </style>
+</head>
+<body>
+  <div class="card" role="main" aria-label="Выбор сервиса для отзыва">
+    <h1>Спасибо, что были у нас</h1>
+    <p>Куда хотите оставить отзыв? Нажмите на сервис ниже.</p>
+
+    <div class="btns" role="navigation" aria-label="Сервисы для отзыва">
+      <a id="yandex" class="btn yandex" href="#" rel="noopener noreferrer">★ Оставить в Яндекс Картах</a>
+      <a id="twogis" class="btn twogis" href="#" rel="noopener noreferrer">● Оставить в 2ГИС</a>
+    </div>
+
+    <p class="hint">Если страница не открывается автоматически, вы всегда можете вернуться и выбрать другой сервис.</p>
+  </div>
+
+  <script>
+    (function(){
+      // Зафиксированные целевые ссылки (без возможности внешнего подстановки)
+      const targets = {
+        yandex: 'https://yandex.com/maps/org/kolokolnaya_gorka/237577049377/reviews/?utm_source=nfc&utm_medium=tag',
+        twogis: 'https://2gis.ru/spb/search/%D0%9A%D0%BE%D0%BB%D0%BE%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%93%D0%BE%D1%80%D0%BA%D0%B0?utm_source=nfc&utm_medium=tag'
+      };
+
+      // Устанавливаем href у кнопок
+      document.getElementById('yandex').href = targets.yandex;
+      document.getElementById('twogis').href = targets.twogis;
+
+      // Простая отправка события на ваш сервер перед редиректом (необязательно)
+      function trackAndOpen(url) {
+        try {
+          navigator.sendBeacon && navigator.sendBeacon('/track-click', JSON.stringify({url:url,src:'nfc',ts:Date.now()}));
+        } catch(e){}
+        window.location.href = url;
+      }
+
+      document.getElementById('yandex').addEventListener('click', function(e){
+        e.preventDefault();
+        trackAndOpen(targets.yandex);
+      });
+      document.getElementById('twogis').addEventListener('click', function(e){
+        e.preventDefault();
+        trackAndOpen(targets.twogis);
+      });
+    })();
+  </script>
+</body>
+</html>
