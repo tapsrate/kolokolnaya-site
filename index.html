@@ -4,49 +4,254 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#171815">
+
 <title>Колокольная Горка — Ваш отзыв</title>
+
 <style>
-:root{--bg:#f4f2ec;--ink:#171815;--muted:#77766f;--line:#dedbd1}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
-.page{width:min(100%,560px);margin:auto;padding:14px}
-.hero{height:390px;border-radius:28px;overflow:hidden;position:relative;background-image:linear-gradient(180deg,rgba(0,0,0,.08) 15%,rgba(0,0,0,.72) 100%),url("restaurant.jpg");background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:28px}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.35))}
-.brand{position:absolute;z-index:2;top:20px;left:20px;padding:9px 13px;border-radius:14px;background:rgba(255,255,255,.9);font-size:11px;font-weight:700;letter-spacing:.7px}
-.hero h1{position:relative;z-index:2;color:#fff;font-size:39px;line-height:1.02;letter-spacing:-1.4px}
-.content{text-align:center;padding:30px 8px 16px}
-.content h2{font-size:25px;letter-spacing:-.6px;margin-bottom:10px}
-.content p{font-size:16px;line-height:1.5;color:var(--muted);margin:0 auto 25px;max-width:430px}
-.buttons{display:grid;gap:12px}
-.button{min-height:66px;border-radius:19px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px;font-weight:650;transition:transform .15s,opacity .15s}
-.button:active{transform:scale(.97)}
-.yandex{background:var(--ink);color:#fff}
-.twogis{background:#fff;color:var(--ink);border:1px solid var(--line)}
-.icon{font-size:20px;margin-right:10px}
-.footer{margin-top:24px;color:#9a9890;font-size:13px;line-height:1.5}
-.nfc{font-size:24px;margin-top:13px}
-@media(max-width:380px){.hero{height:330px}.hero h1{font-size:33px}}
+:root {
+    --bg: #f4f2ec;
+    --ink: #171815;
+    --muted: #77766f;
+    --line: #dedbd1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+.page {
+    width: min(100%, 560px);
+    margin: auto;
+    padding: 14px;
+}
+
+/* ФОТО */
+.hero {
+    height: 390px;
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.05) 10%,
+            rgba(0,0,0,.72) 100%
+        ),
+        url("./restaurant.jpg?v=2");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        180deg,
+        transparent 35%,
+        rgba(0,0,0,.35) 100%
+    );
+}
+
+.brand {
+    position: absolute;
+    z-index: 2;
+
+    top: 20px;
+    left: 20px;
+
+    padding: 9px 13px;
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.9);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .7px;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 2;
+
+    color: #fff;
+
+    font-size: 39px;
+    line-height: 1.02;
+    letter-spacing: -1.4px;
+}
+
+.content {
+    text-align: center;
+    padding: 30px 8px 16px;
+}
+
+.content h2 {
+    font-size: 25px;
+    letter-spacing: -.6px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--muted);
+
+    margin: 0 auto 25px;
+    max-width: 430px;
+}
+
+.buttons {
+    display: grid;
+    gap: 12px;
+}
+
+.button {
+    min-height: 66px;
+
+    border-radius: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 650;
+
+    transition: transform .15s, opacity .15s;
+}
+
+.button:active {
+    transform: scale(.97);
+}
+
+.yandex {
+    background: var(--ink);
+    color: #fff;
+}
+
+.twogis {
+    background: #fff;
+    color: var(--ink);
+    border: 1px solid var(--line);
+}
+
+.icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer {
+    margin-top: 24px;
+
+    color: #9a9890;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.nfc {
+    font-size: 24px;
+    margin-top: 13px;
+}
+
+@media (max-width: 380px) {
+
+    .hero {
+        height: 330px;
+    }
+
+    .hero h1 {
+        font-size: 33px;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <main class="page">
-<section class="hero">
-  <div class="brand">КОЛОКОЛЬНАЯ ГОРКА</div>
-  <h1>Спасибо,<br>что были у нас</h1>
-</section>
-<section class="content">
-  <h2>Поделитесь впечатлением</h2>
-  <p>Нам очень важно ваше мнение. Выберите удобный сервис и оставьте отзыв о вашем визите.</p>
-  <div class="buttons">
-    <a class="button yandex" href="https://yandex.com/maps/org/kolokolnaya_gorka/237577049377/reviews/" target="_blank" rel="noopener">
-      <span class="icon">★</span>Оставить отзыв в Яндекс Картах
-    </a>
-    <a class="button twogis" href="https://2gis.ru/spb/search/%D0%9A%D0%BE%D0%BB%D0%BE%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%93%D0%BE%D1%80%D0%BA%D0%B0" target="_blank" rel="noopener">
-      <span class="icon">●</span>Оставить отзыв в 2ГИС
-    </a>
-  </div>
-  <div class="footer">Спасибо за ваше мнение ❤️<div class="nfc">◉</div>Просто приложите телефон к NFC-метке</div>
-</section>
+
+    <section class="hero">
+
+        <div class="brand">
+            КОЛОКОЛЬНАЯ ГОРКА
+        </div>
+
+        <h1>
+            Спасибо,<br>
+            что были у нас
+        </h1>
+
+    </section>
+
+    <section class="content">
+
+        <h2>
+            Поделитесь впечатлением
+        </h2>
+
+        <p>
+            Нам очень важно ваше мнение.
+            Выберите удобный сервис и оставьте
+            отзыв о вашем визите.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="button yandex"
+                href="https://yandex.com/maps/org/kolokolnaya_gorka/237577049377/reviews/"
+                target="_blank"
+                rel="noopener"
+            >
+                <span class="icon">★</span>
+                Оставить отзыв в Яндекс Картах
+            </a>
+
+            <a
+                class="button twogis"
+                href="https://2gis.ru/spb/search/%D0%9A%D0%BE%D0%BB%D0%BE%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%93%D0%BE%D1%80%D0%BA%D0%B0"
+                target="_blank"
+                rel="noopener"
+            >
+                <span class="icon">●</span>
+                Оставить отзыв в 2ГИС
+            </a>
+
+        </div>
+
+        <div class="footer">
+            Спасибо за ваше мнение ❤️
+
+            <div class="nfc">
+                ◉
+            </div>
+
+            Просто приложите телефон к NFC-метке
+        </div>
+
+    </section>
+
 </main>
+
 </body>
 </html>
